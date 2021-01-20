@@ -1,0 +1,238 @@
+:root {
+    --color-black: #000000;
+    --color-white: #ffffff;
+
+    --color-primary-dark: #1976d2;
+    --color-primary: #2196f3;
+    --color-secondary: #bbdefb;
+    --color-accent: #7c4dff;
+
+    --color-primary-text: #212121;
+    --color-secondary-text: #757575;
+    --color-divider: #bdbdbd;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-white);
+    color: var(--color-primary-text);
+    font-family: 'Montserrat', sans-serif;
+}
+
+a,
+a::after,
+a::before {
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+img {
+    display: block;
+}
+
+#back-to-top {
+    display: block;
+    position: fixed;
+    right: 5%;
+    bottom: 24px;
+    z-index: 999;
+    border: 2px solid var(--color-white);
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 15px 9px;
+    opacity: 0.5;
+    filter: drop-shadow(0 1px 2px var(--color-black));
+    transition: all 0.2s ease;
+}
+
+#back-to-top:hover {
+    opacity: 1.0;
+    filter: drop-shadow(0 2px 4px var(--color-black));
+}
+
+#back-to-top:active {
+    opacity: 0.75;
+    filter: none;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+article {
+    padding: 64px 0 32px 0;
+    border-bottom: double var(--color-divider);
+}
+
+article:last-child {
+    border-bottom: none;
+}
+
+.main__item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.main__item--left {
+    flex-basis: calc(100% / 3);
+}
+
+.main__item--right {
+    flex-basis: calc((100% / 3) * 2);
+}
+
+.main__item--left,
+.main__item--right {
+    margin: 16px 32px;
+}
+
+.main__item--left img {
+    width: 100%;
+    max-width: 512px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.main__item--right h2 {
+    font-size: 36px;
+}
+
+.main__item--right h3 {
+    margin-top: 24px;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--color-primary);
+}
+
+.link__wrapper {
+    margin-top: 24px;
+}
+
+.link__wrapper .link {
+    margin-top: 12px;
+}
+
+.link__wrapper .link a {
+    display: flex;
+    align-items: center;
+}
+
+.link__wrapper .link a i {
+    flex-basis: 32px;
+    font-size: 20px;
+    color: var(--color-accent);
+}
+
+.main__info {
+    margin-top: 12px;
+    padding: 8px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.main__info--left,
+.main__info--right {
+    margin: 0 32px;
+}
+
+.main__info--left {
+    flex-basis: calc(100% / 3);
+    color: var(--color-secondary-text);
+    font-size: 20px;
+}
+
+.main__info--right {
+    flex-basis: calc((100% / 3) * 2);
+    color: var(--color-primary-text);
+    font-size: 20px;
+}
+
+.article__title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.article__title i {
+    flex-basis: 48px;
+    font-size: 24px;
+    line-height: 48px;
+    text-align: center;
+    color: var(--color-primary-dark);
+    background-color: var(--color-secondary);
+    border-radius: 50%;
+    margin-right: 24px;
+}
+
+.article__title h2 {
+    color: var(--color-primary);
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+/* MEDIA QUERY */
+@media (max-width: 1200px) {
+
+    .main__item--left,
+    .main__item--right {
+        margin: 14px 28px;
+    }
+
+    .main__info--left,
+    .main__info--right {
+        margin: 0 28px;
+    }
+}
+
+@media (max-width: 960px) {
+
+    .main__item--left,
+    .main__item--right {
+        margin: 12px 24px;
+    }
+
+    .main__info--left,
+    .main__info--right {
+        margin: 0 24px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .main__item--left,
+    .main__item--right {
+        margin: 10px 20px;
+    }
+
+    .main__info--left,
+    .main__info--right {
+        margin: 0 20px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .main__item--left,
+    .main__item--right {
+        margin: 8px 16px;
+    }
+
+    .main__info--left,
+    .main__info--right {
+        margin: 0 16px;
+    }
+}

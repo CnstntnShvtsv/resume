@@ -4,35 +4,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume (PDF & OpenGraph testing)</title>
 
+    <!-- Open Graph -->
     <meta property="og:type" content="article">
     <meta property="og:locale" content="ru">
     <meta property="og:url" content="https://cnstntnshvtsv.github.io/resume/">
 
     <meta property="og:title" content="Резюме">
-    <meta property="og:description" content="Резюме">
+    <meta property="og:description" content="Основные навыки и качества работника для вакансии HTML-Верстальщик">
 
     <meta property="og:image" content="image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+
+    <!-- Preloading Styles -->
+    <link rel="preload" href="main.css" as="style">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="main.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/516993e320.js" crossorigin="anonymous"></script>
+
+    <title>Резюме</title>
 </head>
 
 <body>
-    <style>
-        body {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    <!-- [if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com">upgrade your browser</a> to improve your experience and security.</p><![endif] -->
 
-        iframe {
+    <!-- Preloader -->
+    <div id="preloader"></div>
+    <script>
+        var preloader = document.getElementById("preloader");
+
+        function fadeOutnojquery(el) {
+            el.style.opacity = 1;
+            var preloaderInterval = setInterval(function () {
+                el.style.opacity = el.style.opacity - 0.05;
+                if (el.style.opacity <= 0.05) {
+                    clearInterval(preloaderInterval);
+                    preloader.style.display = "none";
+                }
+            }, 16);
+        }
+        window.onload = function () {
+            setTimeout(function () {
+                fadeOutnojquery(preloader);
+            }, 500); // Preloader timeout 0.5s
+        };
+    </script>
+    <style>
+        #preloader {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 9999;
             width: 100%;
-            height: 100vh;
+            height: 100%;
+            background-color: #bdbdbd;
+            background-image: url("images/preloader_three-dots.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 48px;
         }
     </style>
 
-    <iframe src="resume.pdf" frameborder="0"></iframe>
+    <main id="main">
+        <div class="container">
+            <article>
+                <div class="main__item">
+                    <div class="main__item--left">
+                        <img src="images/img_avatar.jpg">
+                    </div>
+
+                    <div class="main__item--right">
+                        <h2>Швецов <br>
+                            Константин Александрович</h2>
+                        <h3>Верстальщик (HTML/CSS)</h3>
+
+                        <div class="link__wrapper">
+                            <div class="link">
+                                <a href="#">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <span>+7 985 262 36 05</span>
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <span>+7 978 023 86 27</span>
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>cnstntn@mail.ru</span>
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Севастополь, Крым</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main__info">
+                    <p class="main__info--left">Желаемая зарплата:</p>
+                    <p class="main__info--right">от 40.000 руб.</p>
+                </div>
+                <div class="main__info">
+                    <p class="main__info--left">Готовность к командировкам:</p>
+                    <p class="main__info--right">Возможно.</p>
+                </div>
+                <div class="main__info">
+                    <p class="main__info--left">Занятость:</p>
+                    <p class="main__info--right">Частичная, полная.</p>
+                </div>
+                <div class="main__info">
+                    <p class="main__info--left">График работы:</p>
+                    <p class="main__info--right">Полный или не полный день 5/2.</p>
+                </div>
+            </article>
+
+            <article>
+                <div class="article__title">
+                    <i class="fas fa-user-tie"></i>
+                    <h2>Личная информация</h2>
+                </div>
+                <div class="main__info">
+                    <p class="main__info--left">Переезд:</p>
+                    <p class="main__info--right">Невозможен.</p>
+                </div>
+                <div class="main__info">
+                    <p class="main__info--left">Гражданство:</p>
+                    <p class="main__info--right">Российская Федерация.</p>
+                </div>
+                <div class="main__info">
+                    <p class="main__info--left">Дата рождения:</p>
+                    <p class="main__info--right">24.07.1986.</p>
+                </div>
+                <div class="main__info">
+                    <p class="main__info--left">Пол:</p>
+                    <p class="main__info--right">Мужской.</p>
+                </div>
+                <div class="main__info">
+                    <p class="main__info--left">Семейное положение:</p>
+                    <p class="main__info--right">Женат.</p>
+                </div>
+                <div class="main__info">
+                    <p class="main__info--left">Есть дети:</p>
+                    <p class="main__info--right">Да.</p>
+                </div>
+            </article>
+
+            <article>
+                <div class="article__title">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h2>Образование</h2>
+                </div>
+                <div class="main__info">
+                    <p class="main__info--left">Учебное заведение:</p>
+                    <p class="main__info--right">Вадский строительный техникум.</p>
+                </div>
+                <div class="main__info">
+                    <p class="main__info--left">Год окончания:</p>
+                    <p class="main__info--right">2005.</p>
+                </div>
+                <div class="main__info">
+                    <p class="main__info--left">Факультет:</p>
+                    <p class="main__info--right">Экономика.</p>
+                </div>
+                <div class="main__info">
+                    <p class="main__info--left">Специальность:</p>
+                    <p class="main__info--right">Бухгалтерский учет в строительстве.</p>
+                </div>
+                <div class="main__info">
+                    <p class="main__info--left">Форма обучения:</p>
+                    <p class="main__info--right">Очная.</p>
+                </div>
+            </article>
+
+            <article>
+                <div class="article__title">
+                    <i class="fas fa-briefcase"></i>
+                    <h2>Опыт работы</h2>
+                </div>
+                <div class="main__info">
+                    <p class="main__info--left">Организация:</p>
+                    <p class="main__info--right">Фриланс биржа.</p>
+                </div>
+                <div class="main__info">
+                    <p class="main__info--left">Должность:</p>
+                    <p class="main__info--right">HTML-Верстальщик.</p>
+                </div>
+                <div class="main__info">
+                    <p class="main__info--left">Период работы:</p>
+                    <p class="main__info--right">С 01.01.2020 по настоящее время.</p>
+                </div>
+                <div class="main__info">
+                    <p class="main__info--left">Должностные обязанности:</p>
+                    <p class="main__info--right">Верстка посадочных страниц (Landing Page), подготовка и оптимизация контента, исправление и оптимизация уже действующих проектов.</p>
+                </div>
+            </article>
+
+            <article>
+                <div class="article__title">
+                    <i class="fas fa-sitemap"></i>
+                    <h2>Дополнительная информация</h2>
+                </div>
+                <div class="main__info">
+                    <p class="main__info--left">Языки:</p>
+                    <p class="main__info--right">Русский (родной); Английский (средний); Немецкий (начальный).</p>
+                </div>
+                <div class="main__info">
+                    <p class="main__info--left">Навыки и владение ПО:</p>
+                    <p class="main__info--right">Семантическая, валидная вёрстка. Владение Adobe Illustrator, Adobe Photoshop.</p>
+                </div>
+                <div class="main__info">
+                    <p class="main__info--left">Личные качества:</p>
+                    <p class="main__info--right">Исполнительность, ответственность, обучаемость, стрессоустойчивость и усидчивость.</p>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <a id="back-to-top" href="#main">
+        <img src="images/btn_arrow-top.svg">
+    </a>
 </body>
 
 </html>
